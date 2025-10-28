@@ -66,7 +66,7 @@ function App() {
           <div className="modal">
                 <div className="modal-content">
                   <h2>Fill Details</h2>
-                  <form onSubmit={handleSubmit}>
+                  <form method='POST' onSubmit={handleSubmit}>
                     <div className='form-group'>
                       <label htmlFor='username'>Username:</label>
                       <input type='text' onChange={handleInputChange} id='username' name='username' placeholder='Enter Username' required/>

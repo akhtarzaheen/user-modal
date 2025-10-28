@@ -11,11 +11,6 @@ function App() {
     phone: '',
     dob: ''
   })
-  const handleOpenForm = () => {
-    setOpen(!open)
-  }
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,12 +52,18 @@ function App() {
     }
   }
 
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains("modal-overlay")) {
+      setOpen(!open);
+    }
+  };
+
   return (
     <>
       <h1>User Details Modal</h1>
       <button onClick={() => setOpen(!open)}>Open Form</button>
       {open && (
-        <div  className="modal-overlay">
+        <div  className="modal-overlay" onClick={handleOverlayClick}>
           <div className="modal">
                 <div className="modal-content">
                   <h2>Fill Details</h2>
